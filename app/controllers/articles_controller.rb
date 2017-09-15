@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  access all: [:show, :index], user: {except: [:destroy, :create, :update, :edit, :new]}
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles

@@ -11,7 +11,11 @@
   <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
+  <% if current_user.nil? %>
+  <%= link_to 'Giriş yap', new_user_session_path %>
+  <% else %>
+  <%= link_to 'Çıkış yap', destroy_user_session_path, method: :delete, data: { confirm: 'Emin misin?' } %>
+  <% end %>
   <%= yield %>
   </body>
 </html>

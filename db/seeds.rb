@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Category.create(title: 'Sağlık')
+Category.create(title: 'Teknoloji')
+
+(1..10).each do |article|
+  Article.create(title: "Başlık #{article}", body: 'O kadar önemli degil', category_id: Random.rand(1..2))
+end
+
